@@ -1,0 +1,258 @@
+﻿<Window x:Class="WPFSignIn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFSignIn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Border BorderBrush="DeepSkyBlue"
+            Margin="10"
+            BorderThickness="3">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Content="Your Profile"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="20"
+                           Foreground="DeepSkyBlue"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Ellipse Grid.Row="0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/ronaldo-portugal.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Label Grid.Row="1"
+                               Content="Cristiano Ronaldo"
+                               FontWeight="Bold"
+                               Name="FullName"
+                               HorizontalAlignment="Center"
+                               Foreground="DeepSkyBlue"/>
+
+                        <Label Grid.Row="2"
+                               Content="Football"
+                               Name="Job"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               Foreground="DeepSkyBlue"/>
+
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Height="45" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 0"/>
+                        <Border Grid.Column="1" Height="45" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 0"/>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   Content="86"
+                                   Name="Posts"
+                                   FontWeight="Bold"
+                                   Foreground="DeepSkyBlue"
+                                   FontSize="14"/>
+
+                            <Label Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   Content="posts"
+                                   Foreground="DeepSkyBlue"
+                                   FontWeight="Bold"/>
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   Content="1.1K"
+                                   Name="Messages"
+                                   FontWeight="Bold"
+                                   Foreground="DeepSkyBlue"
+                                   FontSize="14"/>
+
+                            <Label Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   Content="messages"
+                                   Foreground="DeepSkyBlue"
+                                   FontWeight="Bold"/>
+
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   Content="4.5K"
+                                   Name="Members"
+                                   FontWeight="Bold"
+                                   Foreground="DeepSkyBlue"
+                                   FontSize="14"/>
+
+                            <Label Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   Content="members"
+                                   Foreground="DeepSkyBlue"
+                                   FontWeight="Bold"/>
+
+                        </Grid>
+
+
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0"
+                                VerticalAlignment="Center"
+                                CornerRadius="20"
+                                Height="30"
+                                Width="180"
+                                BorderBrush="DeepSkyBlue"
+                                BorderThickness="1">
+
+                            <Button 
+                                BorderThickness="0"
+                                VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    Foreground="DeepSkyBlue"
+                                    Content="Upload New Avatar"
+                                    FontWeight="Bold"/>
+
+                        </Border>
+
+                        <Border Grid.Row="1"
+                                VerticalAlignment="Center"
+                                BorderBrush="DeepSkyBlue"
+                                CornerRadius="20"
+                                Height="30"
+                                Width="90"
+                                BorderThickness="1">
+
+                            <Button BorderThickness="0"
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    Foreground="DeepSkyBlue"
+                                    Content="Delete"/>
+                        </Border>
+                        
+                        
+                        
+                    </Grid>
+                        
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Name="Slogan"
+                           FontWeight="Bold"
+                           Content="Your Slogan"
+                           HorizontalAlignment="Center"
+                           Foreground="DeepSkyBlue"/>
+
+                    <Label Grid.Row="1"
+                           Content="(Just start typing to edit)"
+                           Foreground="DeepSkyBlue"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="1"
+                           Name="Status"
+                           Content="suuuuuuiiiiii"
+                           Foreground="DeepSkyBlue"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                    <Border Margin="5"
+                            BorderBrush="Transparent"
+                            Grid.Row="1">
+                        
+
+                    </Border>
+
+                </Grid>
+                
+                
+            </Grid>
+
+            <Border Grid.Row="0" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 2"/>
+            <Border Grid.Row="1" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 2"/>
+
+            
+            
+        </Grid>
+        
+
+
+
+
+    </Border>
+
+    
+</Window>

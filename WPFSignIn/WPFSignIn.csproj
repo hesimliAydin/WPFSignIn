@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons8-comma-67.png" />
+    <None Remove="ronaldo-portugal.jpg" />
+    <None Remove="Screenshot_1.png" />
+    <None Remove="Screenshot_7.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons8-comma-67.png" />
+    <Resource Include="ronaldo-portugal.jpg" />
+    <Resource Include="Screenshot_1.png" />
+    <Resource Include="Screenshot_7.png" />
+  </ItemGroup>
+
+</Project>
