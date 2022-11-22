@@ -10,7 +10,7 @@
         ResizeMode="NoResize">
     <Border BorderBrush="DeepSkyBlue"
             Margin="10"
-            BorderThickness="3">
+            BorderThickness="2">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -47,9 +47,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Ellipse Grid.Row="0">
+                        <Ellipse Grid.Row="0"
+                                 x:Name="ProfilePhoto"
+                                 AllowDrop="True"
+                                 DragEnter="Profile_Photo_DragEnter">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="/ronaldo-portugal.jpg"/>
+                                <ImageBrush x:Name="profile" ImageSource="/ronaldo-portugal.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
 
@@ -145,9 +148,6 @@
 
                         </Grid>
 
-
-
-
                     </Grid>
 
                     <Grid Grid.Row="3">
@@ -169,6 +169,8 @@
                                 VerticalAlignment="Center"
                                     Background="Transparent"
                                     Foreground="DeepSkyBlue"
+                                Click="ButtonClick"
+                                
                                     Content="Upload New Avatar"
                                     FontWeight="Bold"/>
 
@@ -188,11 +190,11 @@
                                     Foreground="DeepSkyBlue"
                                     Content="Delete"/>
                         </Border>
-                        
-                        
-                        
+
+
+
                     </Grid>
-                        
+
                 </Grid>
 
                 <Grid Grid.Row="1">
@@ -232,27 +234,352 @@
                     <Border Margin="5"
                             BorderBrush="Transparent"
                             Grid.Row="1">
-                        
+
 
                     </Border>
 
                 </Grid>
-                
-                
+
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" BorderBrush="DeepSkyBlue" BorderThickness="0 0 0 2"/>
+                <Label Grid.Row="0"
+                       Content="Edit Your Personal Settings"
+                       FontWeight="Bold"
+                       Foreground="DeepSkyBlue"
+                       HorizontalAlignment="Left"
+                       Padding="10 0"
+                       FontSize="22"/>
+
+                <Border Grid.Row="1" BorderBrush="DeepSkyBlue"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Right"
+                               Content="Full Name"/>
+                        <Border Grid.Column="1"
+                                BorderBrush="DeepSkyBlue"
+                                Margin="5"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     Name="FullNameTxt"
+                                     BorderThickness="0"
+                                     FontSize="12"
+                                     HorizontalAlignment="Left"
+                                     
+                                     />
+
+                        </Border>
+
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Right"
+                               Content="Title"/>
+                        <Border Grid.Column="1"
+                                BorderBrush="DeepSkyBlue"
+                                Margin="5"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     Name="TitleTxt"
+                                     BorderThickness="0"
+                                     FontSize="12"
+                                     HorizontalAlignment="Left"
+                                     />
+
+                        </Border>
+
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Right"
+                               Content="Email"/>
+                        <Border Grid.Column="1"
+                                BorderBrush="DeepSkyBlue"
+                                Margin="5"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     Name="EmailTxt"
+                                     BorderThickness="0"
+                                     FontSize="12"
+                                     HorizontalAlignment="Left"
+                                     />
+
+                        </Border>
+
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Right"
+                               Content="Slogan"/>
+                        <Border Grid.Column="1"
+                                BorderBrush="DeepSkyBlue"
+                                Margin="5"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     Name="SloganTxt"
+                                     BorderThickness="0"
+                                     FontSize="12"
+                                     HorizontalAlignment="Left"
+                                     />
+
+                        </Border>
+
+                    </Grid>
+
+
+                </Grid>
+                <Border Grid.Row="2" BorderBrush="DeepSkyBlue" BorderThickness="1"/>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Foreground="DeepSkyBlue"
+                           FontWeight="Bold"
+                           FontSize="19"
+                           HorizontalAlignment="Center"
+                           Content="Birthday"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox Grid.Column="0"
+                                  Name="DayComboB"
+                                  HorizontalContentAlignment="Center"
+                                  Background="Transparent"
+                                  SelectedIndex="0"
+                                  Margin="10"/>
+                        <ComboBox Grid.Column="1"
+                                  Name="MonthComboB"
+                                  HorizontalContentAlignment="Center"
+                                  Background="Transparent"
+                                  SelectedIndex="0"
+                                  Margin="10"/>
+                        <ComboBox Grid.Column="2"
+                                  Name="YearComboB"
+                                  HorizontalContentAlignment="Center"
+                                  Background="Transparent"
+                                  SelectedIndex="0"
+                                  Margin="10"/>
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="3" BorderBrush="DeepSkyBlue" BorderThickness="1"/>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Label Grid.Row="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               Content="Countury"/>
+
+                        <ComboBox Grid.Row="1"
+                                  Margin="5"                           
+                                  Name="CountryComboB"
+                                  Background="Transparent"
+                                  SelectedIndex="0"
+                                  HorizontalContentAlignment="Center" />
+                           
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               Content="Region"/>
+                        <Border Grid.Row="1"
+                                Margin="5"
+                                BorderBrush="DeepSkyBlue"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     HorizontalAlignment="Left"
+                                     BorderThickness="0"
+                                     FontSize="19"
+                                     Name="RegionTxt"/>
+
+                        </Border>
+                    </Grid>
+
+
+                </Grid>
+                <Border Grid.Row="4" BorderBrush="DeepSkyBlue" BorderThickness="1"/>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               Content="Postal Code"/>
+
+                        <Border Grid.Row="1"
+                                Margin="5"
+                                BorderBrush="DeepSkyBlue"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     HorizontalAlignment="Left"
+                                     BorderThickness="0"
+                                     Name="PostalTxt"
+                                     FontSize="19"/>
+
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="DeepSkyBlue"
+                               FontWeight="Bold"
+                               FontSize="19"
+                               HorizontalAlignment="Center"
+                               Content="Phone Number"/>
+                        <Border Grid.Row="1"
+                                Margin="5"
+                                BorderBrush="DeepSkyBlue"
+                                BorderThickness="1"
+                                CornerRadius="25">
+                            <TextBox Background="Transparent"
+                                     HorizontalAlignment="Left"
+                                     BorderThickness="0"
+                                     FontSize="19"
+                                     Name="PhoneText"
+                                     >
+                                
+                            </TextBox>
+                            
+                        </Border>
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="5"
+                        VerticalAlignment="Center"
+                        BorderBrush="DeepSkyBlue"
+                        CornerRadius="20"
+                        Height="30"
+                        Width="180"
+                        BorderThickness="2">
+
+                    <Button BorderThickness="0"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Foreground="DeepSkyBlue"
+                            Click="SignInClick"
+                            Content="Sign In">
+                        
+                    </Button>
+                    
+                </Border>
+
             </Grid>
 
             <Border Grid.Row="0" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 2"/>
             <Border Grid.Row="1" BorderBrush="DeepSkyBlue" BorderThickness="0 0 2 2"/>
 
-            
-            
+
+
         </Grid>
-        
+
+
+
+
 
 
 
 
     </Border>
 
-    
+
+
 </Window>
