@@ -290,6 +290,7 @@
                             <TextBox Background="Transparent"
                                      Name="FullNameTxt"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="12"
                                      HorizontalAlignment="Left"
                                      
@@ -318,6 +319,7 @@
                             <TextBox Background="Transparent"
                                      Name="TitleTxt"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="12"
                                      HorizontalAlignment="Left"
                                      />
@@ -345,6 +347,7 @@
                             <TextBox Background="Transparent"
                                      Name="EmailTxt"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="12"
                                      HorizontalAlignment="Left"
                                      />
@@ -372,6 +375,7 @@
                             <TextBox Background="Transparent"
                                      Name="SloganTxt"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="12"
                                      HorizontalAlignment="Left"
                                      />
@@ -473,6 +477,7 @@
                             <TextBox Background="Transparent"
                                      HorizontalAlignment="Left"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="19"
                                      Name="RegionTxt"/>
 
@@ -510,6 +515,7 @@
                                      HorizontalAlignment="Left"
                                      BorderThickness="0"
                                      Name="PostalTxt"
+                                     Padding="15 0 0 0"
                                      FontSize="19"/>
 
                         </Border>
@@ -534,6 +540,7 @@
                             <TextBox Background="Transparent"
                                      HorizontalAlignment="Left"
                                      BorderThickness="0"
+                                     Padding="15 0 0 0"
                                      FontSize="19"
                                      Name="PhoneText"
                                      >
